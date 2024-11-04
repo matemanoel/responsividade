@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsividade</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="logotecspetos.jpg" width="190" height="190">
+        <h1>Peça o seu Delicioso TecSpeto</h1>
+    </header>
+    <form>
+    <nav>
+        <a href="#"><span><button class="botao" id="finalizar-pedido">Finalizar</button></span></a>
+        <a href="#"><span id="valorfinal"></span></a>
+        <a href="#"><span><input type="reset" class="botao" id="redefinir"></span></a>
+    </nav>
+    <section id="conteudo">
+        <div class="scroll-container">
+           <div class="sessao">
+               <table>
+                   <tr>
+                     <td>
+                       <img src="img1.jpg" alt="texto explicativo" width="180" height="140">
+                     </td> 
+                     <td>
+                       <font size="4">
+                         <h2>Carne</h2><br><br>
+                         R$ 7,00<br><br>
+                         Quantos? &nbsp;&nbsp;<input class="numero" type="text" size="2" maxlength="2" />
+                       </font>
+                     </td>
+                   </tr>
+               </table>         
+           </div>
+           <div class="sessao">
+            <table>
+                <tr>
+                  <td>
+                    <img src="img2.jpg" alt="texto explicativo" width="180" height="140">
+                  </td> 
+                  <td>
+                    <font size="4">
+                      <h2>Coração</h2><br><br>
+                      R$ 7,00<br><br>
+                      Quantos? &nbsp;&nbsp;<input class="numero" type="text" size="2" maxlength="2" />
+                    </font>
+                  </td>
+                </tr>
+            </table>         
+           </div>
+           <div class="sessao">
+            <table>
+                <tr>
+                  <td>
+                    <img src="img3.jpg" alt="texto explicativo" width="180" height="140">
+                  </td> 
+                  <td>
+                    <font size="4">
+                      <h2>Pão de Alho</h2><br><br>
+                      R$ 5,00<br><br>
+                      Quantos? &nbsp;&nbsp;<input class="numero" type="text" size="2" maxlength="2" />
+                    </font>
+                  </td>
+                </tr>
+            </table>         
+           </div>
+           <div class="sessao">
+            <table>
+                <tr>
+                  <td>
+                    <img src="img4.jpg" alt="texto explicativo" width="180" height="140">
+                  </td> 
+                  <td>
+                    <font size="4">
+                      <h2>Medalhão</h2><br><br>
+                      R$ 8,50<br><br>
+                      Quantos? &nbsp;&nbsp;<input class="numero" type="text" size="2" maxlength="2" />
+                    </font>
+                  </td>
+                </tr>
+            </table>         
+           </div>
+           <div class="sessao">
+            <table>
+                <tr>
+                  <td>
+                    <img src="img1.jpg" alt="texto explicativo" width="180" height="140">
+                  </td> 
+                  <td>
+                    <font size="4">
+                      <h2>Carne</h2><br><br>
+                      R$ 7,00<br><br>
+                      Quantos? &nbsp;&nbsp;<input class="numero" type="text" size="2" maxlength="2" />
+                    </font>
+                  </td>
+                </tr>
+            </table>         
+         </div>
+         <div class="sessao">
+            <table>
+                <tr>
+                  <td>
+                    <img src="img1.jpg" alt="texto explicativo" width="180" height="140">
+                  </td> 
+                  <td>
+                    <font size="4">
+                      <h2>Carne</h2><br><br>
+                      R$ 7,00<br><br>
+                      Quantos? &nbsp;&nbsp;<input class="numero" type="text" size="2" maxlength="2" />
+                    </font>
+                  </td>
+                </tr>
+            </table>         
+        </div>
+        <div class="sessao">
+            <table>
+                <tr>
+                  <td>
+                    <img src="img1.jpg" alt="texto explicativo" width="180" height="140">
+                  </td> 
+                  <td>
+                    <font size="4">
+                      <h2>Carne</h2><br><br>
+                      R$ 7,00<br><br>
+                      Quantos? &nbsp;&nbsp;<input class="numero" type="text" size="2" maxlength="2" />
+                    </font>
+                  </td>
+                </tr>
+            </table>         
+        </div>
+        <div class="sessao">
+            <table>
+                <tr>
+                  <td>
+                    <img src="img1.jpg" alt="texto explicativo" width="180" height="140">
+                  </td> 
+                  <td>
+                    <font size="4">
+                      <h2>Carne</h2><br><br>
+                      R$ 7,00<br><br>
+                      Quantos? &nbsp;&nbsp;<input class="numero" type="text" size="2" maxlength="2" />
+                    </font>
+                  </td>
+                </tr>
+            </table>         
+        </div>
+      </div>
+    </section>
+    </form>
+    <footer>
+        <div class="rodape">
+            <p>
+                Nome:<input type="text" id="nome">
+            </p>
+        </div>
+        <div class="rodape">
+            <p>
+                Telefone:<input type="text" id="fone">
+            </p>            
+        </div>
+    </footer>
+    <script>
+
+        var botaoFinalizar = document.querySelector("#finalizar-pedido");
+        botaoFinalizar.addEventListener("click", function(event) {
+            event.preventDefault();
+            var pedidos = document.querySelectorAll(".numero");
+            var total = 0;
+            for (var i = 0; i < pedidos.length; i++) {
+                var multiplica = 0;
+                if (i==0){var multiplica=7;}
+                if (i==1){var multiplica=7;}
+                if (i==2){var multiplica=5;}
+                var tdValor = Number(pedidos[i].value);
+                total = total + (tdValor * multiplica);
+            }
+            document.getElementById("valorfinal").innerHTML = "Total = R$ " + total.toFixed(2);
+        });
+
+        var botaoRedefinir = document.querySelector("#redefinir");
+        botaoRedefinir.addEventListener("click", function(event) {
+            document.getElementById("valorfinal").innerHTML = "";
+        });
+
+    </script>
+</body>
+</html>
